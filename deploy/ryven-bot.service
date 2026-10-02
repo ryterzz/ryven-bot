@@ -1,0 +1,23 @@
+[Unit]
+Description=ryven Discord bot
+Documentation=https://github.com/ryterzz/ryven-bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ryven
+Group=ryven
+WorkingDirectory=/opt/ryven-bot
+ExecStart=/opt/ryven-bot/venv/bin/python /opt/ryven-bot/bot.py
+Environment=PYTHONUNBUFFERED=1
+Restart=always
+RestartSec=10
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+# The bot is deployed to Linux. Force LF everywhere so shell scripts and
+# systemd units don't break with CRLF after a Windows checkout.
+* text=auto eol=lf
+
+*.sh text eol=lf
+*.service text eol=lf
+*.py text eol=lf
+*.sqlite3 binary
+*.pyc binary
